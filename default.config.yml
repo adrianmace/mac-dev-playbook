@@ -3,91 +3,125 @@ downloads: ~/.ansible-downloads/
 
 configure_dotfiles: true
 configure_terminal: true
+
 configure_osx: true
+osx_script: "~/.osx --no-restart"
 
 # Set to 'true' to configure the Dock via dockutil.
-configure_dock: false
-dockitems_remove: []
-# - Launchpad
-# - TV
-# - Podcasts
-# - 'App Store'
-dockitems_persist: []
-# - name: "Sublime Text"
-#   path: "/Applications/Sublime Text.app/"
-#   pos: 5
+configure_dock: true
+dockitems_remove:
+  - Contacts
+  - FaceTime
+  - Maps
+  - Messages
+  - Music
+  - News
+  - Notes
+  - Photos
+  - Podcasts
+  - Reminders
+  - Safari
+  - TV
+dockitems_persist:
+  - name: "Launchpad"
+    path: "/System/Applications/Launchpad.app"
+    pos: 1
+  - name: "App Store"
+    path: "/System/Applications/App Store.app"
+    pos: 2
+  - name: "Mail"
+    path: "/System/Applications/Mail.app"
+    pos: 3
+  - name: "Calendar"
+    path: "/System/Applications/Calendar.app"
+    pos: 4
+  - name: "Microsoft Edge"
+    path: "/Applications/Microsoft Edge.app"
+    pos: 5
+  - name: "iTerm"
+    path: "/Applications/iTerm.app"
+    pos: 6
+  - name: "Visual Studio Code"
+    path: "/Applications/Visual Studio Code.app"
+    pos: 7
+  - name: "Messenger"
+    path: "/Applications/Messenger.app"
+    pos: 8
+  - name: "Signal"
+    path: "/Applications/Signal.app"
+    pos: 9
+  - name: "System Preferences"
+    path: "/System/Applications/System Preferences.app"
+    pos: 10
 
 configure_sudoers: false
 sudoers_custom_config: ''
-# Example:
-# sudoers_custom_config: |
-#   # Allow users in admin group to use sudo with no password.
-#   %admin ALL=(ALL) NOPASSWD: ALL
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+dotfiles_repo: git@github.com:adrianmace/dotfiles.git
 dotfiles_repo_accept_hostkey: true
-dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
+dotfiles_repo_local_destination: ~/Code/adrianmace/dotfiles
 dotfiles_files:
-  - .zshrc
+  - .aliases
+  - .gitconfig
   - .gitignore
   - .inputrc
   - .osx
   - .vimrc
+  - .zshrc
 
 homebrew_installed_packages:
-  # - ansible # Installed via Pip.
-  - autoconf
   - bash-completion
-  - doxygen
-  - gettext
-  - gifsicle
+  - bat
+  - coreutils
+  - curl
+  - fzf
   - git
-  - github/gh/gh
+  - gnu-sed
+  - gnupg
   - go
   - gpg
+  - grep
+  - htop
   - httpie
-  - iperf
-  - libevent
-  - sqlite
-  - mcrypt
-  - nmap
-  - node
-  - nvm
-  - php
-  - ssh-copy-id
-  - cowsay
-  - readline
+  - iperf3
+  - lsd
+  - mas
+  - mtr
+  - neofetch
   - openssl
-  - pv
+  - teamookla/speedtest/speedtest
   - wget
-  - wrk
+  - zoxide
+  - zsh-autosuggestions
+  - zsh-completions
   - zsh-history-substring-search
+  - zsh-syntax-highlighting
 
 homebrew_taps:
-  - homebrew/core
   - homebrew/cask
+  - homebrew/cask-drivers
+  - homebrew/cask-fonts
+  - homebrew/core
+  - teamookla/speedtest
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - chromedriver
+  - discord
   - docker
-  - dropbox
-  - firefox
-  - google-chrome
-  - handbrake
-  - licecap
-  - sequel-ace
-  - slack
-  - sublime-text
-  - transmit
-  - vagrant
+  - font-jetbrains-mono-nerd-font
+  - iterm2
+  - logitech-g-hub
+  - microsoft-edge
+  - nrlquaker-winbox
+  - signal
+  - visual-studio-code
 
-# See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: []
 mas_email: ""
 mas_password: ""
-
-osx_script: "~/.osx --no-restart"
+mas_installed_apps:
+  - { id: 1480068668, name: "Messenger" }
+  - { id: 1333542190, name: "1Password 7" }
+  - { id: 1475387142, name: "Tailscale" }
 
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
@@ -113,19 +147,7 @@ pip_packages: []
 configure_sublime: false
 sublime_base_path: '~/Library/Application Support/Sublime Text'
 sublime_config_path: "Packages/User"
-sublime_package_control:
-  - "DocBlockr"
-  - "Dockerfile Syntax Highlighting"
-  - "FileDiffs"
-  - "GitHub Flavored Markdown Preview"
-  - "Jinja2"
-  - "Package Control"
-  - "PHP-Twig"
-  - "Pretty JSON"
-  - "SublimeLinter"
-  - "SublimeLinter-contrib-yamllint"
-  - "TrailingSpaces"
-  - "WordCount"
+sublime_package_control: []
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
