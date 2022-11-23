@@ -13,14 +13,12 @@ dockitems_remove:
   - Contacts
   - FaceTime
   - Maps
-  - Messages
   - Music
   - News
   - Notes
   - Photos
   - Podcasts
   - Reminders
-  - Safari
   - TV
 dockitems_persist:
   - name: "Launchpad"
@@ -35,20 +33,20 @@ dockitems_persist:
   - name: "Calendar"
     path: "/System/Applications/Calendar.app"
     pos: 4
+  - name: "Messages"
+    path: "/System/Applications/Messages.app"
+    pos: 5
+  - name: "Safari"
+    path: "/Applications/Safari.app"
+    pos: 6
   - name: "Microsoft Edge"
     path: "/Applications/Microsoft Edge.app"
-    pos: 5
+    pos: 7
   - name: "iTerm"
     path: "/Applications/iTerm.app"
-    pos: 6
+    pos: 8
   - name: "Visual Studio Code"
     path: "/Applications/Visual Studio Code.app"
-    pos: 7
-  - name: "Messenger"
-    path: "/Applications/Messenger.app"
-    pos: 8
-  - name: "Signal"
-    path: "/Applications/Signal.app"
     pos: 9
   - name: "System Preferences"
     path: "/System/Applications/System Preferences.app"
@@ -70,25 +68,36 @@ dotfiles_files:
   - .zshrc
 
 homebrew_installed_packages:
+  - awscli
+  - bash
   - bash-completion
   - bat
+  - cfn-lint
+  - colima
   - coreutils
   - curl
+  - docker
+  - docker-credential-helper-ecr
   - fzf
+  - gawk
   - git
   - gnu-sed
   - gnupg
   - go
   - gpg
   - grep
+  - hadolint
   - htop
   - httpie
   - iperf3
+  - kubernetes-cli
   - lsd
   - mas
   - mtr
   - neofetch
+  - node
   - openssl
+  - python@3.10
   - teamookla/speedtest/speedtest
   - wget
   - zoxide
@@ -106,22 +115,21 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - discord
-  - docker
+  - 1password
   - font-jetbrains-mono-nerd-font
+  - iina
   - iterm2
-  - logitech-g-hub
   - microsoft-edge
   - nrlquaker-winbox
-  - signal
+  - postman
+  - secretive
+  - shottr
+  - stats
   - visual-studio-code
 
 mas_email: ""
 mas_password: ""
-mas_installed_apps:
-  - { id: 1480068668, name: "Messenger" }
-  - { id: 1333542190, name: "1Password 7" }
-  - { id: 1475387142, name: "Tailscale" }
+mas_installed_apps: []
 
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
