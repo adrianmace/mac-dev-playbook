@@ -73,7 +73,6 @@ homebrew_installed_packages:
   - bash-completion
   - bat
   - cfn-lint
-  - colima
   - coreutils
   - curl
   - docker
@@ -97,8 +96,6 @@ homebrew_installed_packages:
   - neofetch
   - node
   - openssl
-  - python@3.10
-  - teamookla/speedtest/speedtest
   - wget
   - zoxide
   - zsh-autosuggestions
@@ -106,23 +103,13 @@ homebrew_installed_packages:
   - zsh-history-substring-search
   - zsh-syntax-highlighting
 
-homebrew_taps:
-  - homebrew/cask
-  - homebrew/cask-drivers
-  - homebrew/cask-fonts
-  - homebrew/core
-  - teamookla/speedtest
+homebrew_taps: []
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - 1password
   - font-jetbrains-mono-nerd-font
   - iina
-  - iterm2
-  - microsoft-edge
-  - nrlquaker-winbox
-  - postman
-  - secretive
   - shottr
   - stats
   - visual-studio-code
